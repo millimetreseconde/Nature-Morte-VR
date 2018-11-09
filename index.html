@@ -1,0 +1,140 @@
+              <!-- 
+              Atelier d'introduction à A-Frame (WebVR) réalisé par MM/S
+              http://www.millimetreseconde.com
+              -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Nom de la page -->
+    <title>Nature Morte VR - MM/S</title>
+    <meta name="description" content="Nature Morte VR - MM/S">
+    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.js"></script>
+    <!-- Gradient Sky-->
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+  </head>
+  <body>
+    <a-scene antialias="true" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" class="fullscreen" shadow="type:pcf;">
+      <a-light type="ambient" intensity="1"></a-light>
+      <a-sky material="shader: gradient; topColor: 255 254 196; bottomColor: 0 117 226;" position="" rotation="" scale="" visible="" geometry=""></a-sky>
+      <a-camera>
+      </a-camera>
+        <!-- 
+        Importer les liens des assets ici. 
+        Collonne de gauche > assets > compotuer puis copier le lien pour un OBJ et le MTL (textures)
+        Le modèle vient de Google poly : -->    
+        <a-assets>  
+          
+          <a-asset-item id="baril_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Baril.obj"></a-asset-item>
+          <a-asset-item id="baril_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Baril.mtl"></a-asset-item>
+          <a-asset-item id="ferret_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Ferret.obj"></a-asset-item>
+          <a-asset-item id="ferret_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Ferret.mtl"></a-asset-item>
+          <a-asset-item id="apple_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Apple.obj"></a-asset-item>
+          <a-asset-item id="apple_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Apple.mtl"></a-asset-item>
+          <a-asset-item id="cochon_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Cochon.obj"></a-asset-item>
+          <a-asset-item id="cochon_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Cochon.mtl"></a-asset-item>
+          <a-asset-item id="chien_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/chien.obj"></a-asset-item>
+          <a-asset-item id="chien_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/chien.mtl"></a-asset-item>
+          <a-asset-item id="dinosaure_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/dinosaure.obj"></a-asset-item>
+          <a-asset-item id="dinosaure_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/dinosaure.mtl"></a-asset-item>
+          <a-asset-item id="Chaudron_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Chaudron.obj"></a-asset-item>
+          <a-asset-item id="Chaudron_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Chaudron.mtl"></a-asset-item>
+          <a-asset-item id="hippocampe_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/hippocampe.obj"></a-asset-item>
+          <a-asset-item id="hippocampe_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/hippocampe.mtl"></a-asset-item> 
+          <a-asset-item id="tasse_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Tasse.obj"></a-asset-item>
+          <a-asset-item id="tasse_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/Tasse.mtl"></a-asset-item>
+          <a-asset-item id="autobus_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/autobus.obj"></a-asset-item>
+          <a-asset-item id="autobus_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/autobus.mtl"></a-asset-item>
+          <a-asset-item id="cactus_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/cactus.obj"></a-asset-item>
+          <a-asset-item id="cactus_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/cactus.mtl"></a-asset-item>
+          <a-asset-item id="hamburger_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/hamburger.obj"></a-asset-item>
+          <a-asset-item id="hamburger_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/hamburger.mtl"></a-asset-item>
+          <a-asset-item id="helicopter_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/helicoptere.obj"></a-asset-item>
+          <a-asset-item id="helicopter_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/helicoptere.mtl"></a-asset-item>
+          <a-asset-item id="palmier1_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/palmier1.obj"></a-asset-item>
+          <a-asset-item id="palmier1_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/palmier1.mtl"></a-asset-item>
+          <a-asset-item id="plante_carni_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/plantecarnivore.obj"></a-asset-item>
+          <a-asset-item id="plante_carni_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/plantecarnivore.mtl"></a-asset-item>
+          <a-asset-item id="algue_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/algues.obj"></a-asset-item>
+          <a-asset-item id="algue_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/algues.mtl"></a-asset-item>
+          <a-asset-item id="algue2_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/algues2.obj"></a-asset-item>
+          <a-asset-item id="algue2_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/algues2.mtl"></a-asset-item>
+          <a-asset-item id="roche_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/roche.obj"></a-asset-item>
+          <a-asset-item id="roche_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/roche.mtl"></a-asset-item>
+          <a-asset-item id="bateau_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/bateaucroisiere.obj"></a-asset-item>
+          <a-asset-item id="bateau_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/bateaucroisiere.mtl"></a-asset-item>
+          <a-asset-item id="homard_obj" src="https://lerabot.neocities.org/mms/NatureMorte_assets/homard2.obj"></a-asset-item>
+          <a-asset-item id="homard_mtl" src="https://lerabot.neocities.org/mms/NatureMorte_assets/homard2.mtl"></a-asset-item>
+          
+        </a-assets>
+
+        <a-cylinder position="0 -3 0" height="2" radius="50"></a-cylinder>
+      
+        <!-- LISTE DES OBJETS INACTIFS -->
+        <!--
+
+        <a-entity obj-model="obj: #chien_obj; mtl: #chien_mtl;"           position="3 -1 6" rotation="0 180 0" scale="0.5 0.5 0.5" ></a-entity>
+        <a-entity obj-model="obj: #coq_obj; mtl: #coq_mtl;" position="0 0 -3" scale="1 1 1"></a-entity>
+        <a-entity obj-model="obj: #ferret_obj; mtl: #ferret_mtl;"         position="-10 -2 -17" rotation="0 60 0" scale="3 3 3" ></a-entity>
+                
+        -->
+        
+        <!-- LISTE DES OBJETS ACTIFS -->
+        
+        <a-entity obj-model="obj: #chien_obj; mtl: #chien_mtl;"           position="3 -1 6" rotation="0 180 0" scale="0.5 0.5 0.5" ></a-entity>
+        <a-entity obj-model="obj: #coq_obj; mtl: #coq_mtl;" position="0 0 -3" scale="1 1 1"></a-entity>
+        <a-entity obj-model="obj: #ferret_obj; mtl: #ferret_mtl;"         position="-10 -2 -17" rotation="0 60 0" scale="3 3 3" ></a-entity>
+        <a-entity obj-model="obj: #apple_obj; mtl: #apple_mtl;"           position="21 -1 -33" ></a-entity>
+        <a-entity obj-model="obj: #cochon_obj; mtl: #cochon_mtl;"         position="-5 -1 -6" scale="3 3 3"></a-entity>
+        <a-entity obj-model="obj: #dinosaure_obj; mtl: #dinosaure_mtl;"   position="-5 -5 -50" scale="12 12 12" rotation="0 160 0"></a-entity>
+        <a-entity obj-model="obj: #Chaudron_obj; mtl: #Chaudron_mtl;"     position="-10 -2  10" scale="4 4 4" ></a-entity>
+        <a-entity obj-model="obj: #baril_obj; mtl: #baril_mtl;"           position="-16 -2.2 13" scale="4 4 4" ></a-entity>
+        <a-entity obj-model="obj: #tasse_obj; mtl: #tasse_mtl;"           position="-16 2 13" scale="4 4 4" ></a-entity>
+        <a-entity obj-model="obj: #autobus_obj; mtl: #autobus_mtl;"       position="-10 -3 50" scale="0.3 0.3 0.3" rotation="0 40 0"></a-entity>
+        <a-entity obj-model="obj: #cactus_obj; mtl: #cactus_mtl;"         position="-10 0 -12" scale="13 13 13" rotation="0 40 0"></a-entity>
+        <a-entity obj-model="obj: #plante_carni_obj; mtl: #plante_carni_mtl;"  position="-23 3 -12" scale="4 4 4" rotation="0 -140 0"></a-entity>
+        <a-entity obj-model="obj: #hamburger_obj; mtl: #hamburger_mtl;"   position="-20 3 -3" scale="7 7 7" rotation="0 40 0"></a-entity>
+        <a-entity obj-model="obj: #helicopter_obj; mtl: #helicopter_mtl;"    position="30 20 -3" rotation="0 75 0" scale="2 2 2" ></a-entity>
+        <a-entity obj-model="obj: #palmier1_obj; mtl: #palmier1_mtl;"     position="20 -4 -30" rotation="0 -84 0" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj: #palmier1_obj; mtl: #palmier1_mtl;"     position="-20 -4 -30" rotation="10 -20 0" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj: #palmier1_obj; mtl: #palmier1_mtl;"     position="-33 -4 30" rotation="0 -170 0" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj: #palmier1_obj; mtl: #palmier1_mtl;"     position="14 -4 43" rotation="5 -30 5" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj: #palmier1_obj; mtl: #palmier1_mtl;"     position="12 -4 41" rotation="-8 30 0" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj: #palmier1_obj; mtl: #palmier1_mtl;"     position="-15 -4 -40" rotation="0 50 0" scale="2 2 2"></a-entity>
+        <a-entity obj-model="obj: #hippocampe_obj; mtl: #hippocampe_mtl;" position="18 2 -10" rotation="0 -50 0" scale="10 10 10"></a-entity>
+        <a-entity obj-model="obj: #hippocampe_obj; mtl: #hippocampe_mtl;" position="13 2 -7" rotation="0 50 0" scale="10 10 10"></a-entity>
+        <a-entity obj-model="obj: #hippocampe_obj; mtl: #hippocampe_mtl;" position="10 2 -4" rotation="0 -20 0" scale="10 10 10"></a-entity>
+        <a-entity obj-model="obj: #hippocampe_obj; mtl: #hippocampe_mtl;" position="13 2 -10" rotation="0 0 0" scale="10 10 10"></a-entity>
+        <a-entity obj-model="obj: #algue_obj; mtl: #algue_mtl;"           position="11 -1 -11" rotation="0 50 0" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj: #algue_obj; mtl: #algue_mtl;"           position="15 -1 -5" rotation="0 0 0" scale="14 14 14"></a-entity>
+        <a-entity obj-model="obj: #algue2_obj; mtl: #algue2_mtl;"         position="20 -1 -11" rotation="0 50 0" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj: #algue2_obj; mtl: #algue2_mtl;"         position="27 -1 -15" rotation="0 90 0" scale="14 14 14"></a-entity>
+        <a-entity obj-model="obj: #roche_obj; mtl: #roche_mtl;"           position="-5 1 -36" rotation="0 90 0" scale="7 7 7"></a-entity>
+        <a-entity obj-model="obj: #roche_obj; mtl: #roche_mtl;"           position="7 -1 -34" rotation="90 75 0" scale="5 5 5"></a-entity>
+        <a-entity obj-model="obj: #homard_obj; mtl: #homard_mtl;"       position="-5 4 -38" rotation="0 90 0" scale="1 1 1"></a-entity>
+        <a-entity obj-model="obj: #bateau_obj; mtl: #bateau_mtl;"         position="-30 -2 -40" rotation="0 -45 0" scale="2 2 2"></a-entity>
+       
+    </a-scene>
+  </body>
+</html>
+
+        <!--
+        Guide pour les positions dans A-FRAME
+
+        Position 
+        1ier chiffre : Gauche (négatif) & Droite (positif)
+        2ième chiffre : Haut (Positif) & Bas (négatif)
+        3ième chiffre : Proche (négatif) + loin (positif) axe des Z
+
+        Rotation
+        1ier axe : spin sur gauche droite
+        2ieèe axe : spin sur lui-même
+        3ième axe : Z
+
+        A-Sky : Rajouter un fond + n'importe quel lien
+
+        Pour la position : garder les chiffres entre 0 et 5, environ
+
+
+        -->
