@@ -1,5 +1,5 @@
-# A-Frame Project
+# Nature Morte VR
 
-Built with [A-Frame](https://aframe.io), a web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms.
+This project is a simple introduction to  [A-Frame](https://aframe.io), a web framework for building virtual reality experiences. 
 
-Click and drag on desktop. Open it on a smartphone and use the device motion sensors. Or [plug in a VR headset](https://webvr.rocks)!
+User are invited to move the various 3D model around to create *natures mortes*. This is a very basic introduction to positioning in a VR environnement.
